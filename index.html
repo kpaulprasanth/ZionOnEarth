@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoe Foundations | Zion on Earth</title>
+  <title>Zoe Foundations | Zion On Earth</title>
   <style>
     :root {
       --primary: #1e3a5f;
@@ -26,8 +26,14 @@
     header {
       background: linear-gradient(135deg, #0f2027, var(--primary));
       color: #ffffff;
-      padding: 4.5rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       text-align: center;
+    }
+    .logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 1rem;
+      display: inline-block;
     }
     header h1 {
       font-size: 2.75rem;
@@ -42,10 +48,22 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+    .video-section {
+      max-width: 800px;
+      margin: -2rem auto 2rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      background: #000;
+    }
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 2rem 1.5rem 4rem;
     }
     .card-grid {
       display: grid;
@@ -87,9 +105,17 @@
 <body>
 
   <header>
+    <img src="ZOEFLOGO.png" alt="Zoe Foundations Logo" class="logo">
     <h1>Zoe Foundations</h1>
     <p class="tagline">Zion on Earth</p>
   </header>
+
+  <div class="video-section">
+    <video controls playsinline poster="ZOEFLOGO.png">
+      <source src="Zoeflogobvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <main class="container">
     <section>
