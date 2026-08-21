@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoe Foundations | Zion On Earth</title>
+  <title>Zoe Foundations | Zion on Earth</title>
   <style>
     :root {
       --primary: #1e3a5f;
@@ -23,76 +23,113 @@
       background-color: var(--bg);
       color: var(--text);
     }
-    header {
-      background: linear-gradient(135deg, #0f2027, var(--primary));
-      color: #ffffff;
-      padding: 3.5rem 1.5rem;
+
+    /* Hero Video Cover */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
-    .logo {
-      max-width: 140px;
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
       height: auto;
-      margin-bottom: 1rem;
-      display: inline-block;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
     }
-    header h1 {
-      font-size: 2.75rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(15, 32, 39, 0.65), rgba(30, 58, 95, 0.75));
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
       color: #ffffff;
+      padding: 0 1.5rem;
+      max-width: 800px;
     }
-    header p.tagline {
-      font-size: 1.25rem;
+
+    .hero-logo {
+      max-width: 130px;
+      height: auto;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p.tagline {
+      font-size: 1.35rem;
       color: var(--accent);
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
-    .video-section {
-      max-width: 800px;
-      margin: -2rem auto 2rem;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-    video {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      background: #000;
-    }
+
+    /* Page Content */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 4rem 1.5rem;
     }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
+
     .card {
       background: var(--card-bg);
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border-top: 4px solid var(--accent);
     }
+
     .card h3 {
       color: var(--primary);
       margin-bottom: 0.75rem;
       font-size: 1.3rem;
     }
+
     blockquote {
-      margin: 2.5rem 0;
+      margin: 3rem 0;
       padding: 1.5rem 2rem;
       background: #f0f4f8;
       border-left: 5px solid var(--primary);
       font-style: italic;
       color: #334e68;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       border-radius: 0 8px 8px 0;
     }
+
     footer {
       text-align: center;
       padding: 2.5rem 1rem;
@@ -100,27 +137,40 @@
       color: #9fb3c8;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p.tagline {
+        font-size: 1.1rem;
+      }
+      .hero {
+        height: 70vh;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="ZOEFLOGO.png" alt="Zoe Foundations Logo" class="logo">
-    <h1>Zoe Foundations</h1>
-    <p class="tagline">Zion on Earth</p>
+  <!-- Full-Width Background Video Cover -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="ZOEFLOGO.png">
+      <source src="Zoeflogobvideo.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
+      <h1>Zoe Foundations</h1>
+      <p class="tagline">Zion on Earth</p>
+    </div>
   </header>
 
-  <div class="video-section">
-    <video controls playsinline poster="ZOEFLOGO.png">
-      <source src="Zoeflogobvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
+  <!-- Main Website Body -->
   <main class="container">
     <section>
       <h2>Rooted in Divine Life</h2>
-      <p style="margin-top: 1rem; font-size: 1.1rem;">
+      <p style="margin-top: 1rem; font-size: 1.15rem;">
         <strong>Zoe</strong> represents the uncreated, eternal life of God—a divine foundation calling believers to experience and reflect the reality of <strong>Zion on Earth</strong>.
       </p>
     </section>
