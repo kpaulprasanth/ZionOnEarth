@@ -24,7 +24,7 @@
       color: var(--text);
     }
 
-    /* Hero Video Cover */
+    /* Hero Background Video Cover */
     .hero {
       position: relative;
       width: 100%;
@@ -155,18 +155,19 @@
 
   <!-- Full-Width Background Video Cover -->
   <header class="hero">
-    <video class="hero-video" autoplay muted loop playsinline poster="ZOEFLOGO.png">
-      <source src="Zoeflogobvideo.mp4" type="video/mp4">
+    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto" poster="./ZOEFLOGO.png">
+      <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
+      <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
       <h1>Zoe Foundations</h1>
       <p class="tagline">Zion on Earth</p>
     </div>
   </header>
 
-  <!-- Main Website Body -->
+  <!-- Main Website Content -->
   <main class="container">
     <section>
       <h2>Rooted in Divine Life</h2>
@@ -198,6 +199,16 @@
   <footer>
     &copy; Zoe Foundations. All rights reserved.
   </footer>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+    if (video) {
+      video.muted = true;
+      video.play().catch(error => {
+        console.log("Autoplay check:", error);
+      });
+    }
+  </script>
 
 </body>
 </html>
