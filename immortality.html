@@ -74,7 +74,7 @@
       padding: 3rem 2.5rem;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
     .article-body h2 {
       font-family: "Times New Roman", Times, serif;
@@ -96,72 +96,34 @@
       border-radius: 0 8px 8px 0;
     }
 
-    .blog-section { margin-top: 2rem; }
+    .blog-section { margin-top: 4rem; }
     .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-    
-    details.blog-card {
+    .blog-card {
       background: var(--card-bg);
-      padding: 1.75rem 2rem;
+      padding: 2rem;
       border-radius: 10px;
       border-left: 4px solid var(--primary);
       box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease;
     }
-    details.blog-card[open] {
-      border-left-color: #77dd77;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-    }
-    details summary {
-      outline: none;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-    }
-    details summary::-webkit-details-marker { display: none; }
-    
-    .meta { font-size: 0.85rem; color: #64748b; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1px; }
-    .card-title {
+    .blog-card:hover { transform: translateY(-2px); }
+    .blog-card h3 {
       font-family: "Times New Roman", Times, serif;
       color: var(--primary);
       font-size: 1.35rem;
-      font-weight: 700;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin-bottom: 0.5rem;
     }
-    .card-title::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--primary);
-      font-weight: 400;
-    }
-    details[open] .card-title::after {
-      content: '−';
-    }
-
-    .article-full-content {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-color);
-      color: #374151;
-      font-size: 1.05rem;
-      cursor: auto;
-    }
-    .article-full-content p { margin-bottom: 1rem; }
+    .blog-card .meta { font-size: 0.85rem; color: #64748b; margin-bottom: 0.75rem; }
 
     .back-btn {
       display: inline-block;
       margin-top: 2rem;
-      padding: 0.85rem 2rem;
+      padding: 0.8rem 1.8rem;
       background: var(--primary);
       color: #ffffff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      font-family: "Times New Roman", Times, serif;
-      letter-spacing: 1px;
-      transition: opacity 0.2s;
     }
     .back-btn:hover { opacity: 0.9; }
 
@@ -171,19 +133,17 @@
       background: #0f2027;
       color: #9fb3c8;
       font-size: 0.9rem;
-      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Navbar with reliable Root Links -->
   <nav class="navbar">
-    <a href="/" class="nav-brand">Zoe Foundations</a>
+    <a href="index.html" class="nav-brand">Zoe Foundations</a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#focus">Focus Areas</a></li>
-      <li><a href="/#connect">Connect</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#focus">Focus Areas</a></li>
+      <li><a href="index.html#connect">Connect</a></li>
     </ul>
   </nav>
 
@@ -211,49 +171,24 @@
       </p>
     </article>
 
-    <!-- Expanded Teachings Continuation -->
     <section class="blog-section">
-      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--primary); margin-bottom: 0.5rem;">Articles & Teachings on Immortality</h2>
-      <p style="color: #64748b; margin-bottom: 1.5rem;">Click any teaching below to expand and read the full study.</p>
-      
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--primary);">Articles & Teachings on Immortality</h2>
       <div class="blog-grid">
-        
-        <details class="blog-card">
-          <summary>
-            <span class="meta">Teaching • Zoe Life Series</span>
-            <span class="card-title">1. Swallowing Up Mortality in Victory</span>
-          </summary>
-          <div class="article-full-content">
-            <p>
-              In 1 Corinthians 15, the Apostle Paul reveals that corruption cannot inherit incorruption. The physical body and mind are meant to be clothed upon by the Spirit of Life.
-            </p>
-            <p>
-              This victory does not begin at the grave—it begins the moment the seed of Zoe is deposited into the spirit of the believer. As we renew our minds to this divine blueprint, fear of decay and mortality loses its grip, releasing peace and supernatural health into our daily walk.
-            </p>
-          </div>
-        </details>
-
-        <details class="blog-card">
-          <summary>
-            <span class="meta">Revelation • Kingdom Studies</span>
-            <span class="card-title">2. The Tree of Life vs. The Tree of Knowledge</span>
-          </summary>
-          <div class="article-full-content">
-            <p>
-              From the beginning in Genesis, two sources were presented to humanity: the Tree of the Knowledge of Good and Evil (which produced legalism, striving, and mortality) and the Tree of Life (which produced eternal communion and Zoe).
-            </p>
-            <p>
-              Living under Zion means feeding continuously from Christ as the Tree of Life. We no longer define our spiritual state by human effort, but by resting in His finished incorruptible work.
-            </p>
-          </div>
-        </details>
-
+        <div class="blog-card">
+          <div class="meta">Teaching • Zoe Life Series</div>
+          <h3>1. Swallowing Up Mortality in Victory</h3>
+          <p>An in-depth study of 1 Corinthians 15 and how the incorruptible seed operates within the spirit of the believer today.</p>
+        </div>
+        <div class="blog-card">
+          <div class="meta">Revelation • Kingdom Studies</div>
+          <h3>2. The Tree of Life vs. The Tree of Knowledge</h3>
+          <p>Moving past religion and understanding how feasting on the Divine Life produces spiritual perpetuity and dominion.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Clean Return Navigation -->
-    <div style="text-align: center; margin-top: 3.5rem;">
-      <a href="/#focus" class="back-btn">← Back to All Focus Areas</a>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="index.html#focus" class="back-btn">← Back to All Focus Areas</a>
     </div>
   </main>
 
