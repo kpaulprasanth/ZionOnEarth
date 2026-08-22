@@ -24,52 +24,73 @@
       color: var(--text);
     }
 
-    /* Video Banner */
-    .video-banner-container {
+    /* Hero Background Video Cover */
+    .hero {
+      position: relative;
       width: 100%;
-      background-color: #000000;
+      height: 85vh;
+      min-height: 550px;
+      overflow: hidden;
       display: flex;
-      justify-content: center;
       align-items: center;
-    }
-
-    .video-banner {
-      width: 100%;
-      max-width: 1200px;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    /* Header Section Below Video */
-    .header-section {
-      background-color: #ffffff;
-      padding: 3.5rem 1.5rem 2.5rem;
+      justify-content: center;
       text-align: center;
-      border-bottom: 1px solid #eaeaea;
     }
 
-    .site-logo {
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    /* Transparent Overlay */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(15, 32, 39, 0.6), rgba(30, 58, 95, 0.7));
+      z-index: 2;
+    }
+
+    /* Hero Overlay Content */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 0 1.5rem;
+      max-width: 850px;
+    }
+
+    .hero-logo {
       max-width: 130px;
       height: auto;
       margin-bottom: 1.25rem;
-      display: inline-block;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
     }
 
-    /* Shining Light Green Title */
-    .shining-title {
-      font-size: 3rem;
-      font-weight: 800;
+    /* Zoe Foundations: Times New Roman, Light Green Shining Font */
+    .hero-content h1.shining-title {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 3.4rem;
+      font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 0.75rem;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #5cdb5c 0%, #b8f5b8 25%, #ffffff 50%, #b8f5b8 75%, #5cdb5c 100%);
+      background: linear-gradient(90deg, #66cc66 0%, #b8f5b8 25%, #ffffff 50%, #b8f5b8 75%, #66cc66 100%);
       background-size: 200% auto;
-      color: #66cc66;
+      color: #90ee90;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 4s linear infinite;
-      text-shadow: 0 0 20px rgba(144, 238, 144, 0.4);
+      text-shadow: 0 0 25px rgba(144, 238, 144, 0.4);
     }
 
     @keyframes shine {
@@ -78,35 +99,40 @@
       }
     }
 
-    /* Tagline in Times New Roman, Black */
-    .tagline {
+    /* Tagline: Times New Roman, Black on Clean Badge or High Contrast */
+    .hero-content p.tagline {
       font-family: "Times New Roman", Times, serif;
       font-size: 1.25rem;
       color: #000000;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     /* Main Content */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 4rem 1.5rem;
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     .card {
       background: var(--card-bg);
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border-top: 4px solid #77dd77;
     }
 
@@ -114,16 +140,18 @@
       color: var(--primary);
       margin-bottom: 0.75rem;
       font-size: 1.3rem;
+      font-family: "Times New Roman", Times, serif;
     }
 
     blockquote {
-      margin: 2.5rem 0;
+      margin: 3rem 0;
       padding: 1.5rem 2rem;
       background: #f4faf4;
       border-left: 5px solid #77dd77;
       font-style: italic;
+      font-family: "Times New Roman", Times, serif;
       color: #2e4a32;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       border-radius: 0 8px 8px 0;
     }
 
@@ -136,41 +164,42 @@
     }
 
     @media (max-width: 768px) {
-      .shining-title {
-        font-size: 2.2rem;
+      .hero-content h1.shining-title {
+        font-size: 2.3rem;
       }
-      .tagline {
-        font-size: 1rem;
+      .hero-content p.tagline {
+        font-size: 0.95rem;
         letter-spacing: 1.5px;
       }
-      .site-logo {
-        max-width: 100px;
+      .hero {
+        height: 75vh;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Full Video Banner -->
-  <div class="video-banner-container">
-    <video class="video-banner" id="bgVideo" autoplay muted loop playsinline preload="auto">
+  <!-- Full-Width Background Video Cover -->
+  <header class="hero">
+    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto" poster="./ZOEFLOGO.png">
       <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-  </div>
-
-  <!-- Header with Logo, Light Green Shining Title, and Tagline -->
-  <header class="header-section">
-    <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="site-logo">
-    <h1 class="shining-title">Zoe Foundations</h1>
-    <p class="tagline">LIFE OF GOD • ZION ON EARTH</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
+      <h1 class="shining-title">Zoe Foundations</h1>
+      <div>
+        <p class="tagline">LIFE OF GOD • ZION ON EARTH</p>
+      </div>
+    </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Website Content -->
   <main class="container">
     <section>
-      <h2>Rooted in Divine Life</h2>
-      <p style="margin-top: 1rem; font-size: 1.1rem;">
+      <h2 style="font-family: 'Times New Roman', Times, serif;">Rooted in Divine Life</h2>
+      <p style="margin-top: 1rem; font-size: 1.15rem;">
         <strong>Zoe</strong> represents the uncreated, eternal life of God—a divine foundation calling believers to experience and reflect the reality of <strong>Zion on Earth</strong>.
       </p>
     </section>
@@ -203,7 +232,7 @@
     const video = document.getElementById('bgVideo');
     if (video) {
       video.muted = true;
-      video.play().catch(err => console.log('Autoplay check:', err));
+      video.play().catch(err => console.log('Autoplay status:', err));
     }
   </script>
 
