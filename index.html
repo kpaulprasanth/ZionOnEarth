@@ -16,12 +16,58 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
-      line-height: 1.7;
+      line-height: 1.75;
       background-color: var(--bg);
       color: var(--text);
+    }
+
+    /* Sticky Navigation Bar */
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 32, 39, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-brand {
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
     /* Hero Background Video Cover */
@@ -50,7 +96,6 @@
       object-fit: cover;
     }
 
-    /* Transparent Radial Overlay */
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -61,7 +106,6 @@
       z-index: 2;
     }
 
-    /* Content on Top of Video */
     .hero-content {
       position: relative;
       z-index: 3;
@@ -72,7 +116,6 @@
       align-items: center;
     }
 
-    /* Zoe Foundations Title: Times New Roman, Light Green Shine */
     .hero-content h1.shining-title {
       font-family: "Times New Roman", Times, serif;
       font-size: 3.8rem;
@@ -95,7 +138,6 @@
       }
     }
 
-    /* Tagline: Times New Roman, Black on White Badge */
     .tagline-badge {
       display: inline-block;
       background: rgba(255, 255, 255, 0.92);
@@ -114,56 +156,115 @@
       margin: 0;
     }
 
-    /* Main Content */
+    /* Container & Section Layouts */
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 4.5rem 1.5rem;
+      padding: 5rem 1.5rem;
     }
 
-    .card-grid {
+    .section-heading {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtext {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #556987;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .about-split {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
     }
 
-    .card {
+    .about-box {
       background: var(--card-bg);
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
       border-top: 4px solid #77dd77;
     }
 
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.75rem;
-      font-size: 1.3rem;
+    .about-box h3 {
       font-family: "Times New Roman", Times, serif;
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-box p {
+      color: #4a5568;
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
 
     blockquote {
-      margin: 3rem 0;
-      padding: 1.5rem 2rem;
+      margin: 3.5rem 0;
+      padding: 1.75rem 2.25rem;
       background: #f4faf4;
       border-left: 5px solid #77dd77;
       font-style: italic;
       font-family: "Times New Roman", Times, serif;
       color: #2e4a32;
-      font-size: 1.15rem;
-      border-radius: 0 8px 8px 0;
+      font-size: 1.2rem;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2.25rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      border-top: 4px solid #77dd77;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .card p {
+      color: #4a5568;
     }
 
     footer {
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       background: #0f2027;
       color: #9fb3c8;
       font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     @media (max-width: 768px) {
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
       .hero-content h1.shining-title {
         font-size: 2.5rem;
       }
@@ -179,7 +280,17 @@
 </head>
 <body>
 
-  <!-- Full-Width Background Video Cover Without Logo -->
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">Zoe Foundations</a>
+    <ul class="nav-links">
+      <li><a href="#about">About & Vision</a></li>
+      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Full-Width Background Video Cover -->
   <header class="hero">
     <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
       <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
@@ -196,35 +307,58 @@
 
   <!-- Main Website Content -->
   <main class="container">
-    <section>
-      <h2 style="font-family: 'Times New Roman', Times, serif;">Rooted in Divine Life</h2>
-      <p style="margin-top: 1rem; font-size: 1.15rem;">
-        <strong>Zoe</strong> represents the uncreated, eternal life of God—a divine foundation calling believers to experience and reflect the reality of <strong>Zion on Earth</strong>.
-      </p>
+    
+    <!-- About & Vision Section -->
+    <section id="about">
+      <h2 class="section-heading">Our Calling & Purpose</h2>
+      <p class="section-subtext">Bringing the eternal realities of God's Kingdom into lived earthly experience.</p>
+      
+      <div class="about-split">
+        <div class="about-box">
+          <h3>What is "Zoe"?</h3>
+          <p>
+            In the original Greek scriptures, <em>Zoe</em> refers to the divine, uncreated life of God—distinct from mere biological existence. It is the spiritual life that regenerates, empowers, and sustains believers in every sphere of life.
+          </p>
+        </div>
+        <div class="about-box">
+          <h3>The Vision of Zion</h3>
+          <p>
+            <em>Zion on Earth</em> represents the tangible establishment of God’s peace, truth, and righteousness within our families, local communities, and daily walk—rooted in Christ as our unshakable cornerstone.
+          </p>
+        </div>
+      </div>
     </section>
 
     <blockquote>
       "The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full." — John 10:10
     </blockquote>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>The Zoe Life</h3>
-        <p>Experiencing the fullness of God's abundant, spiritual life transforming our daily walk and purpose.</p>
+    <!-- Core Pillars Section -->
+    <section id="pillars" style="margin-top: 4rem;">
+      <h2 class="section-heading">Core Foundations</h2>
+      <p class="section-subtext">The spiritual framework guiding our outreach, fellowship, and discipleship.</p>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h3>1. Divine Life</h3>
+          <p>Experiencing the fullness of God's abundant, supernatural grace transforming the heart and mind.</p>
+        </div>
+        <div class="card">
+          <h3>2. Heavenly Blueprint</h3>
+          <p>Reflecting the order, compassion, and divine authority of Zion through intentional service.</p>
+        </div>
+        <div class="card">
+          <h3>3. Unshakable Truth</h3>
+          <p>Anchored deeply in biblical doctrine, fervent prayer, and genuine fellowship across generations.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Zion on Earth</h3>
-        <p>Reflecting the peace, truth, and community of the heavenly realm in practical, visible ways.</p>
-      </div>
-      <div class="card">
-        <h3>Solid Foundation</h3>
-        <p>Anchored deeply in biblical truth, prayer, and enduring spiritual values.</p>
-      </div>
-    </div>
+    </section>
+
   </main>
 
-  <footer>
-    &copy; Zoe Foundations. All rights reserved.
+  <footer id="contact">
+    <p>&copy; Zoe Foundations. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #627d98;">Life of God • Zion on Earth</p>
   </footer>
 
   <script>
