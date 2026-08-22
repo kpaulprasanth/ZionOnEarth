@@ -26,7 +26,7 @@
       color: var(--text);
     }
 
-    /* Sticky Navigation Bar */
+    /* Sticky Navigation */
     nav.navbar {
       position: fixed;
       top: 0;
@@ -41,7 +41,6 @@
       padding: 0.9rem 2rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
     .nav-brand {
       font-family: "Times New Roman", Times, serif;
       color: #ffffff;
@@ -51,27 +50,21 @@
       text-decoration: none;
       text-transform: uppercase;
     }
-
     .nav-links {
       display: flex;
       list-style: none;
       gap: 1.75rem;
     }
-
     .nav-links a {
       color: #e2e8f0;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
-      letter-spacing: 0.5px;
       transition: color 0.2s ease;
     }
+    .nav-links a:hover { color: var(--accent); }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* Hero Background Video Cover */
+    /* Hero Video Cover */
     .hero {
       position: relative;
       width: 100%;
@@ -83,7 +76,6 @@
       justify-content: center;
       text-align: center;
     }
-
     .hero-video {
       position: absolute;
       top: 50%;
@@ -96,7 +88,6 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
     }
-
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -106,7 +97,6 @@
       background: radial-gradient(circle at center, rgba(15, 32, 39, 0.45) 0%, rgba(10, 20, 28, 0.7) 100%);
       z-index: 2;
     }
-
     .hero-content {
       position: relative;
       z-index: 3;
@@ -116,7 +106,6 @@
       flex-direction: column;
       align-items: center;
     }
-
     .hero-content h1.shining-title {
       font-family: "Times New Roman", Times, serif;
       font-size: 3.8rem;
@@ -130,23 +119,15 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 4s linear infinite;
-      text-shadow: 0 0 25px rgba(144, 238, 144, 0.35);
     }
-
-    @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
-    }
-
+    @keyframes shine { to { background-position: 200% center; } }
     .tagline-badge {
       display: inline-block;
       background: rgba(255, 255, 255, 0.92);
       padding: 0.5rem 1.6rem;
       border-radius: 50px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
     }
-
     .tagline-badge p {
       font-family: "Times New Roman", Times, serif;
       font-size: 1.15rem;
@@ -157,13 +138,12 @@
       margin: 0;
     }
 
-    /* Container & Sections */
+    /* Container & Layout */
     .container {
       max-width: 960px;
       margin: 0 auto;
       padding: 5rem 1.5rem 3rem;
     }
-
     .section-heading {
       font-family: "Times New Roman", Times, serif;
       font-size: 2.2rem;
@@ -171,7 +151,6 @@
       margin-bottom: 0.75rem;
       text-align: center;
     }
-
     .section-subtext {
       text-align: center;
       font-size: 1.1rem;
@@ -180,33 +159,62 @@
       margin: 0 auto 3rem;
     }
 
+    /* Ministry Focus Options (Clickable Cards) */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .focus-card {
+      background: var(--card-bg);
+      padding: 1.5rem 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .focus-card:hover {
+      transform: translateY(-4px);
+      border-color: #77dd77;
+      box-shadow: 0 6px 20px rgba(119, 221, 119, 0.15);
+    }
+    .focus-card h3 {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+    .focus-card p {
+      font-size: 0.85rem;
+      color: #627d98;
+    }
+
+    /* Other Grids */
     .about-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       margin-bottom: 3.5rem;
     }
-
     .about-box {
       background: var(--card-bg);
       padding: 2.25rem;
       border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
       border-top: 4px solid #77dd77;
     }
-
     .about-box h3 {
       font-family: "Times New Roman", Times, serif;
       color: var(--primary);
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
     }
-
-    .about-box p {
-      color: #4a5568;
-      line-height: 1.8;
-    }
-
     blockquote {
       margin: 3.5rem 0;
       padding: 1.75rem 2.25rem;
@@ -217,29 +225,20 @@
       color: #2e4a32;
       font-size: 1.2rem;
       border-radius: 0 10px 10px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.75rem;
       margin-top: 2rem;
     }
-
     .card {
       background: var(--card-bg);
       padding: 2.25rem;
       border-radius: 12px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border-top: 4px solid #77dd77;
-      transition: transform 0.2s ease;
     }
-
-    .card:hover {
-      transform: translateY(-3px);
-    }
-
     .card h3 {
       color: var(--primary);
       margin-bottom: 0.75rem;
@@ -247,25 +246,17 @@
       font-family: "Times New Roman", Times, serif;
     }
 
-    .card p {
-      color: #4a5568;
-    }
-
-    /* Contact / Prayer Form Section */
+    /* Form Styles */
     .form-card {
       background: var(--card-bg);
       padding: 3rem 2.5rem;
       border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
       border-top: 5px solid #77dd77;
       max-width: 680px;
       margin: 0 auto;
     }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
+    .form-group { margin-bottom: 1.5rem; }
     .form-group label {
       display: block;
       margin-bottom: 0.5rem;
@@ -273,10 +264,7 @@
       color: var(--primary);
       font-size: 0.95rem;
     }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group input, .form-group select, .form-group textarea {
       width: 100%;
       padding: 0.85rem 1rem;
       border: 1px solid var(--border-color);
@@ -285,18 +273,14 @@
       font-size: 1rem;
       color: var(--text);
       background: #fafbfa;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.2s;
     }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: #77dd77;
-      box-shadow: 0 0 0 3px rgba(119, 221, 119, 0.25);
+      box-shadow: 0 0 0 3px rgba(119,221,119,0.25);
       background: #ffffff;
     }
-
     .submit-btn {
       width: 100%;
       background: linear-gradient(135deg, #1e3a5f, #0f2027);
@@ -308,15 +292,11 @@
       letter-spacing: 1px;
       border-radius: 8px;
       cursor: pointer;
-      transition: opacity 0.2s ease, transform 0.1s ease;
       font-family: "Times New Roman", Times, serif;
       text-transform: uppercase;
+      transition: opacity 0.2s ease;
     }
-
-    .submit-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
+    .submit-btn:hover { opacity: 0.92; }
 
     footer {
       text-align: center;
@@ -324,28 +304,17 @@
       background: #0f2027;
       color: #9fb3c8;
       font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
       margin-top: 5rem;
     }
 
     @media (max-width: 768px) {
-      .about-split {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .form-card {
-        padding: 2rem 1.5rem;
-      }
-      .hero-content h1.shining-title {
-        font-size: 2.5rem;
-      }
-      .tagline-badge p {
-        font-size: 0.85rem;
-        letter-spacing: 1.5px;
-      }
-      .hero {
-        height: 75vh;
-      }
+      .about-split { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-content h1.shining-title { font-size: 2.5rem; }
+      .tagline-badge p { font-size: 0.85rem; }
+      .hero { height: 75vh; }
+      nav.navbar { padding: 0.8rem 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -356,16 +325,15 @@
     <a href="#" class="nav-brand">Zoe Foundations</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#focus">Focus Areas</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
   </nav>
 
-  <!-- Full-Width Background Video Cover -->
+  <!-- Hero Video Cover -->
   <header class="hero">
     <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
       <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -376,27 +344,50 @@
     </div>
   </header>
 
-  <!-- Main Website Content -->
   <main class="container">
     
-    <!-- About & Vision Section -->
+    <!-- About Section -->
     <section id="about">
       <h2 class="section-heading">Our Calling & Purpose</h2>
       <p class="section-subtext">Bringing the eternal realities of God's Kingdom into lived earthly experience.</p>
-      
       <div class="about-split">
         <div class="about-box">
           <h3>What is "Zoe"?</h3>
-          <p>
-            In the original Greek scriptures, <em>Zoe</em> refers to the divine, uncreated life of God—distinct from mere biological existence. It is the spiritual life that regenerates, empowers, and sustains believers in every sphere of life.
-          </p>
+          <p>In the original Greek scriptures, <em>Zoe</em> refers to the divine, uncreated life of God—distinct from mere biological existence. It is the spiritual life that regenerates, empowers, and sustains believers in every sphere of life.</p>
         </div>
         <div class="about-box">
           <h3>The Vision of Zion</h3>
-          <p>
-            <em>Zion on Earth</em> represents the tangible establishment of God’s peace, truth, and righteousness within our families, local communities, and daily walk—rooted in Christ as our unshakable cornerstone.
-          </p>
+          <p><em>Zion on Earth</em> represents the tangible establishment of God’s peace, truth, and righteousness within our families, local communities, and daily walk—rooted in Christ as our unshakable cornerstone.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Ministry Focus Areas -->
+    <section id="focus" style="margin-top: 5rem;">
+      <h2 class="section-heading">Areas of Healing & Revelation</h2>
+      <p class="section-subtext">Select an area below to connect with us for prayer, counsel, or testimony.</p>
+      
+      <div class="focus-grid">
+        <a href="#connect" class="focus-card" onclick="setSubject('Immortality')">
+          <h3>Immortality</h3>
+          <p>Eternal Life Revelation</p>
+        </a>
+        <a href="#connect" class="focus-card" onclick="setSubject('Sonship')">
+          <h3>Sonship</h3>
+          <p>Identity in Christ</p>
+        </a>
+        <a href="#connect" class="focus-card" onclick="setSubject('Health & Healing')">
+          <h3>Health</h3>
+          <p>Physical & Inner Healing</p>
+        </a>
+        <a href="#connect" class="focus-card" onclick="setSubject('Financial Breakthrough')">
+          <h3>Finance</h3>
+          <p>Kingdom Provision</p>
+        </a>
+        <a href="#connect" class="focus-card" onclick="setSubject('Freedom from Addictions')">
+          <h3>Addictions</h3>
+          <p>Deliverance & Freedom</p>
+        </a>
       </div>
     </section>
 
@@ -404,31 +395,10 @@
       "The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full." — John 10:10
     </blockquote>
 
-    <!-- Core Pillars Section -->
-    <section id="pillars" style="margin-top: 4rem;">
-      <h2 class="section-heading">Core Foundations</h2>
-      <p class="section-subtext">The spiritual framework guiding our outreach, fellowship, and discipleship.</p>
-      
-      <div class="card-grid">
-        <div class="card">
-          <h3>1. Divine Life</h3>
-          <p>Experiencing the fullness of God's abundant, supernatural grace transforming the heart and mind.</p>
-        </div>
-        <div class="card">
-          <h3>2. Heavenly Blueprint</h3>
-          <p>Reflecting the order, compassion, and divine authority of Zion through intentional service.</p>
-        </div>
-        <div class="card">
-          <h3>3. Unshakable Truth</h3>
-          <p>Anchored deeply in biblical doctrine, fervent prayer, and genuine fellowship across generations.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Connect / Prayer Request Section -->
+    <!-- Connect Form -->
     <section id="connect" style="margin-top: 5rem;">
       <h2 class="section-heading">Connect With Us</h2>
-      <p class="section-subtext">Have a question or need prayer? We would love to hear from you.</p>
+      <p class="section-subtext">Have a question or need prayer? Select a topic and reach out.</p>
 
       <div class="form-card">
         <form action="https://formspree.io/f/placeholder" method="POST">
@@ -436,26 +406,26 @@
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required placeholder="Enter your full name">
           </div>
-
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" required placeholder="name@example.com">
           </div>
-
           <div class="form-group">
-            <label for="subject">Subject / Purpose</label>
+            <label for="subject">Focus Area / Subject</label>
             <select id="subject" name="subject">
-              <option value="Prayer Request">Prayer Request</option>
               <option value="General Inquiry">General Inquiry</option>
-              <option value="Fellowship">Fellowship & Community</option>
+              <option value="Immortality">Immortality</option>
+              <option value="Sonship">Sonship</option>
+              <option value="Health & Healing">Health & Healing</option>
+              <option value="Financial Breakthrough">Financial Breakthrough</option>
+              <option value="Freedom from Addictions">Freedom from Addictions</option>
+              <option value="Prayer Request">General Prayer Request</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="message">Message / Prayer Need</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Write your message or prayer request here..."></textarea>
+            <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
           </div>
-
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
@@ -469,10 +439,17 @@
   </footer>
 
   <script>
+    // Video autoplay fix
     const video = document.getElementById('bgVideo');
     if (video) {
       video.muted = true;
       video.play().catch(err => console.log('Autoplay status:', err));
+    }
+
+    // Auto-select dropdown subject when clicking a Focus Card
+    function setSubject(subjectValue) {
+      const dropdown = document.getElementById('subject');
+      dropdown.value = subjectValue;
     }
   </script>
 
