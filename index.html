@@ -7,7 +7,7 @@
   <style>
     :root {
       --primary: #1e3a5f;
-      --accent: #90ee90; /* Light Green */
+      --accent: #90ee90;
       --bg: #faf9f6;
       --text: #2d3748;
       --card-bg: #ffffff;
@@ -50,7 +50,7 @@
       object-fit: cover;
     }
 
-    /* Subtle Overlay for Readability */
+    /* Transparent Radial Overlay */
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -61,7 +61,7 @@
       z-index: 2;
     }
 
-    /* Content Directly on Video */
+    /* Content on Top of Video */
     .hero-content {
       position: relative;
       z-index: 3;
@@ -72,20 +72,13 @@
       align-items: center;
     }
 
-    .hero-logo {
-      max-width: 140px;
-      height: auto;
-      margin-bottom: 1.25rem;
-      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
-    }
-
-    /* Zoe Foundations: Times New Roman, Light Green Shining Font */
+    /* Zoe Foundations Title: Times New Roman, Light Green Shine */
     .hero-content h1.shining-title {
       font-family: "Times New Roman", Times, serif;
-      font-size: 3.6rem;
+      font-size: 3.8rem;
       font-weight: 700;
       letter-spacing: 2.5px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       background: linear-gradient(90deg, #66cc66 0%, #b8f5b8 25%, #ffffff 50%, #b8f5b8 75%, #66cc66 100%);
       background-size: 200% auto;
@@ -102,14 +95,13 @@
       }
     }
 
-    /* Tagline: Times New Roman, Black Text on Crisp Pill Badge */
+    /* Tagline: Times New Roman, Black on White Badge */
     .tagline-badge {
       display: inline-block;
       background: rgba(255, 255, 255, 0.92);
-      padding: 0.45rem 1.4rem;
+      padding: 0.5rem 1.6rem;
       border-radius: 50px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-      margin-top: 0.25rem;
     }
 
     .tagline-badge p {
@@ -173,14 +165,11 @@
 
     @media (max-width: 768px) {
       .hero-content h1.shining-title {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
       }
       .tagline-badge p {
         font-size: 0.85rem;
         letter-spacing: 1.5px;
-      }
-      .hero-logo {
-        max-width: 105px;
       }
       .hero {
         height: 75vh;
@@ -190,15 +179,14 @@
 </head>
 <body>
 
-  <!-- Background Video Cover with Logo and Titles Placed Directly Over It -->
+  <!-- Full-Width Background Video Cover Without Logo -->
   <header class="hero">
-    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto" poster="./ZOEFLOGO.png">
+    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
       <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
       <h1 class="shining-title">Zoe Foundations</h1>
       <div class="tagline-badge">
         <p>LIFE OF GOD • ZION ON EARTH</p>
