@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immortality & Eternal Life | Zoe Foundations</title>
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --accent: #90ee90;
+      --bg: #faf9f6;
+      --text: #2d3748;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+      line-height: 1.8;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    nav.navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 32, 39, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-brand {
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+    .nav-links a { color: #e2e8f0; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
 
+    .page-header {
+      background: linear-gradient(135deg, #0f2027, var(--primary));
+      color: #ffffff;
+      padding: 4.5rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .container { max-width: 850px; margin: 0 auto; padding: 4rem 1.5rem; }
+    
+    .article-body {
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 3.5rem;
+    }
+    .article-body h2 {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #374151; }
+    
+    blockquote {
+      margin: 2.5rem 0;
+      padding: 1.5rem 2rem;
+      background: #f4faf4;
+      border-left: 5px solid #77dd77;
+      font-style: italic;
+      font-family: "Times New Roman", Times, serif;
+      color: #2e4a32;
+      font-size: 1.15rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .blog-section { margin-top: 2rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    
+    details.blog-card {
+      background: var(--card-bg);
+      padding: 1.75rem 2rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    details.blog-card[open] {
+      border-left-color: #77dd77;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+    details summary {
+      outline: none;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    
+    .meta { font-size: 0.85rem; color: #64748b; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1px; }
+    .card-title {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 400;
+    }
+    details[open] .card-title::after {
+      content: '−';
+    }
+
+    .article-full-content {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      color: #374151;
+      font-size: 1.05rem;
+      cursor: auto;
+    }
+    .article-full-content p { margin-bottom: 1rem; }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.85rem 2rem;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+    .back-btn:hover { opacity: 0.9; }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: #0f2027;
+      color: #9fb3c8;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar with reliable Root Links -->
+  <nav class="navbar">
+    <a href="/" class="nav-brand">Zoe Foundations</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#focus">Focus Areas</a></li>
+      <li><a href="/#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>The Revelation of Immortality</h1>
+    <p>Life and Incorruption Brought to Light</p>
+  </header>
+
+  <main class="container">
+    <article class="article-body">
+      <h2>The Eternal Blueprint of Zoe</h2>
+      <p>
+        In biblical theology, immortality is not merely endless existence—it is the direct impartation of God's uncreated, incorruptible life (<em>Zoe</em>) swallowing up mortality. Christ has abolished death and brought life and immortality to light through the Gospel.
+      </p>
+      <p>
+        When believers awaken to their union with Christ, they walk no longer under the dominion of corruption, decay, and fear, but under the law of the Spirit of Life in Christ Jesus.
+      </p>
+
+      <blockquote>
+        "Our Savior Jesus Christ, who has destroyed death and has brought life and immortality to light through the gospel." — 2 Timothy 1:10
+      </blockquote>
+
+      <p>
+        As Zion is established on Earth, we contend for the full manifestation of this reality: spiritual vitality, divine endurance, and unbroken fellowship with the Father.
+      </p>
+    </article>
+
+    <!-- Expanded Teachings Continuation -->
+    <section class="blog-section">
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--primary); margin-bottom: 0.5rem;">Articles & Teachings on Immortality</h2>
+      <p style="color: #64748b; margin-bottom: 1.5rem;">Click any teaching below to expand and read the full study.</p>
+      
+      <div class="blog-grid">
+        
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Teaching • Zoe Life Series</span>
+            <span class="card-title">1. Swallowing Up Mortality in Victory</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              In 1 Corinthians 15, the Apostle Paul reveals that corruption cannot inherit incorruption. The physical body and mind are meant to be clothed upon by the Spirit of Life.
+            </p>
+            <p>
+              This victory does not begin at the grave—it begins the moment the seed of Zoe is deposited into the spirit of the believer. As we renew our minds to this divine blueprint, fear of decay and mortality loses its grip, releasing peace and supernatural health into our daily walk.
+            </p>
+          </div>
+        </details>
+
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Revelation • Kingdom Studies</span>
+            <span class="card-title">2. The Tree of Life vs. The Tree of Knowledge</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              From the beginning in Genesis, two sources were presented to humanity: the Tree of the Knowledge of Good and Evil (which produced legalism, striving, and mortality) and the Tree of Life (which produced eternal communion and Zoe).
+            </p>
+            <p>
+              Living under Zion means feeding continuously from Christ as the Tree of Life. We no longer define our spiritual state by human effort, but by resting in His finished incorruptible work.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Clean Return Navigation -->
+    <div style="text-align: center; margin-top: 3.5rem;">
+      <a href="/#focus" class="back-btn">← Back to All Focus Areas</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Zoe Foundations. All rights reserved. • Zion on Earth
+  </footer>
+
+</body>
+</html>
