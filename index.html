@@ -24,73 +24,92 @@
       color: var(--text);
     }
 
-    /* Top Video Banner (Full Uncut Display) */
-    .video-banner-container {
+    /* Hero Background Video Cover */
+    .hero {
+      position: relative;
       width: 100%;
-      background-color: #0b151e;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
       display: flex;
-      justify-content: center;
       align-items: center;
-    }
-
-    .video-banner {
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    /* Header Section Below Video */
-    .header-section {
-      background: linear-gradient(135deg, #0f2027, var(--primary));
-      color: #ffffff;
-      padding: 3rem 1.5rem;
+      justify-content: center;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .site-logo {
-      max-width: 140px;
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
       height: auto;
-      margin-bottom: 1rem;
-      display: inline-block;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
     }
 
-    .header-section h1 {
-      font-size: 2.75rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.4rem;
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(15, 32, 39, 0.65), rgba(30, 58, 95, 0.75));
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
       color: #ffffff;
+      padding: 0 1.5rem;
+      max-width: 800px;
     }
 
-    .header-section p.tagline {
-      font-size: 1.2rem;
+    .hero-logo {
+      max-width: 130px;
+      height: auto;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p.tagline {
+      font-size: 1.35rem;
       color: var(--accent);
       font-weight: 600;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
-    /* Main Content */
+    /* Page Content */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem;
+      padding: 4rem 1.5rem;
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     .card {
       background: var(--card-bg);
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border-top: 4px solid var(--accent);
     }
 
@@ -101,13 +120,13 @@
     }
 
     blockquote {
-      margin: 2.5rem 0;
+      margin: 3rem 0;
       padding: 1.5rem 2rem;
       background: #f0f4f8;
       border-left: 5px solid var(--primary);
       font-style: italic;
       color: #334e68;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       border-radius: 0 8px 8px 0;
     }
 
@@ -120,40 +139,39 @@
     }
 
     @media (max-width: 768px) {
-      .header-section h1 {
-        font-size: 2.1rem;
+      .hero-content h1 {
+        font-size: 2.2rem;
       }
-      .header-section p.tagline {
-        font-size: 1rem;
+      .hero-content p.tagline {
+        font-size: 1.1rem;
       }
-      .site-logo {
-        max-width: 110px;
+      .hero {
+        height: 70vh;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Full Video (Uncropped & Fully Visible) -->
-  <div class="video-banner-container">
-    <video class="video-banner" id="bgVideo" autoplay muted loop playsinline preload="auto">
+  <!-- Full-Width Background Video Cover -->
+  <header class="hero">
+    <video class="hero-video" id="bgVideo" autoplay muted loop playsinline preload="auto" poster="./ZOEFLOGO.png">
       <source src="./ZoeFlogobvideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-  </div>
-
-  <!-- Header with Logo and Title Below the Video -->
-  <header class="header-section">
-    <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="site-logo">
-    <h1>Zoe Foundations</h1>
-    <p class="tagline">Zion on Earth</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="./ZOEFLOGO.png" alt="Zoe Foundations Logo" class="hero-logo">
+      <h1>Zoe Foundations</h1>
+      <p class="tagline">Zion on Earth</p>
+    </div>
   </header>
 
   <!-- Main Website Content -->
   <main class="container">
     <section>
       <h2>Rooted in Divine Life</h2>
-      <p style="margin-top: 1rem; font-size: 1.1rem;">
+      <p style="margin-top: 1rem; font-size: 1.15rem;">
         <strong>Zoe</strong> represents the uncreated, eternal life of God—a divine foundation calling believers to experience and reflect the reality of <strong>Zion on Earth</strong>.
       </p>
     </section>
@@ -186,7 +204,9 @@
     const video = document.getElementById('bgVideo');
     if (video) {
       video.muted = true;
-      video.play().catch(err => console.log('Autoplay prevented:', err));
+      video.play().catch(error => {
+        console.log("Autoplay check:", error);
+      });
     }
   </script>
 
