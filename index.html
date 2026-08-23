@@ -159,43 +159,46 @@
       margin: 0 auto 3rem;
     }
 
-    /* Ministry Focus Options (Clickable Cards) */
+    /* Ministry Focus Options (Clickable Navigation Cards) */
     .focus-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      gap: 1.25rem;
       margin-top: 2rem;
     }
     .focus-card {
       background: var(--card-bg);
-      padding: 1.5rem 1rem;
-      border-radius: 10px;
+      padding: 1.75rem 1rem;
+      border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       border: 1px solid var(--border-color);
+      border-top: 4px solid #77dd77;
       text-align: center;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       color: inherit;
     }
     .focus-card:hover {
       transform: translateY(-4px);
-      border-color: #77dd77;
-      box-shadow: 0 6px 20px rgba(119, 221, 119, 0.15);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
     .focus-card h3 {
       font-family: "Times New Roman", Times, serif;
       color: var(--primary);
-      font-size: 1.15rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.35rem;
     }
     .focus-card p {
       font-size: 0.85rem;
       color: #627d98;
     }
 
-    /* Other Grids */
+    /* About Section */
     .about-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -225,25 +228,6 @@
       color: #2e4a32;
       font-size: 1.2rem;
       border-radius: 0 10px 10px 0;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: var(--card-bg);
-      padding: 2.25rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      border-top: 4px solid #77dd77;
-    }
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.75rem;
-      font-size: 1.35rem;
-      font-family: "Times New Roman", Times, serif;
     }
 
     /* Form Styles */
@@ -322,7 +306,7 @@
 
   <!-- Sticky Navbar -->
   <nav class="navbar">
-    <a href="#" class="nav-brand">Zoe Foundations</a>
+    <a href="./index.html" class="nav-brand">Zoe Foundations</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#focus">Focus Areas</a></li>
@@ -365,26 +349,26 @@
     <!-- Ministry Focus Areas -->
     <section id="focus" style="margin-top: 5rem;">
       <h2 class="section-heading">Areas of Healing & Revelation</h2>
-      <p class="section-subtext">Select an area below to connect with us for prayer, counsel, or testimony.</p>
+      <p class="section-subtext">Click any area below to explore teachings, scriptures, and articles.</p>
       
       <div class="focus-grid">
-        <a href="#connect" class="focus-card" onclick="setSubject('Immortality')">
+        <a href="./immortality.html" class="focus-card">
           <h3>Immortality</h3>
-          <p>Eternal Life Revelation</p>
+          <p>Life & Incorruption</p>
         </a>
-        <a href="#connect" class="focus-card" onclick="setSubject('Sonship')">
+        <a href="./sonship.html" class="focus-card">
           <h3>Sonship</h3>
-          <p>Identity in Christ</p>
+          <p>Identity & Authority</p>
         </a>
-        <a href="#connect" class="focus-card" onclick="setSubject('Health & Healing')">
+        <a href="./health.html" class="focus-card">
           <h3>Health</h3>
-          <p>Physical & Inner Healing</p>
+          <p>Divine Healing & Vitality</p>
         </a>
-        <a href="#connect" class="focus-card" onclick="setSubject('Financial Breakthrough')">
+        <a href="./finance.html" class="focus-card">
           <h3>Finance</h3>
           <p>Kingdom Provision</p>
         </a>
-        <a href="#connect" class="focus-card" onclick="setSubject('Freedom from Addictions')">
+        <a href="./addictions.html" class="focus-card">
           <h3>Addictions</h3>
           <p>Deliverance & Freedom</p>
         </a>
@@ -398,7 +382,7 @@
     <!-- Connect Form -->
     <section id="connect" style="margin-top: 5rem;">
       <h2 class="section-heading">Connect With Us</h2>
-      <p class="section-subtext">Have a question or need prayer? Select a topic and reach out.</p>
+      <p class="section-subtext">Have a question or need prayer? Send us a message.</p>
 
       <div class="form-card">
         <form action="https://formspree.io/f/placeholder" method="POST">
@@ -439,17 +423,10 @@
   </footer>
 
   <script>
-    // Video autoplay fix
     const video = document.getElementById('bgVideo');
     if (video) {
       video.muted = true;
       video.play().catch(err => console.log('Autoplay status:', err));
-    }
-
-    // Auto-select dropdown subject when clicking a Focus Card
-    function setSubject(subjectValue) {
-      const dropdown = document.getElementById('subject');
-      dropdown.value = subjectValue;
     }
   </script>
 
