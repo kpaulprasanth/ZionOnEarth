@@ -1,1 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine Health & Healing | Zoe Foundations</title>
+  <style>
+    :root {
+      --gold-primary: #d4af37;
+      --gold-light: #fef08a;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --bg-heaven: #08111e;
+      --card-bg: rgba(15, 28, 48, 0.85);
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+      line-height: 1.85;
+      background: radial-gradient(circle at 50% 10%, #0d2e23 0%, #08111e 65%, #030712 100%);
+      color: var(--text-light);
+      min-height: 100vh;
+    }
+    nav.navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(8, 17, 30, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-brand {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px var(--gold-glow);
+    }
+    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); text-shadow: 0 0 8px var(--gold-glow); }
 
+    .page-header {
+      padding: 5.5rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(8, 17, 30, 0) 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .page-header h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 3.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(90deg, #d4af37, #bbf7d0, #ffffff, #bbf7d0, #d4af37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+    }
+    @keyframes shine { to { background-position: 200% center; } }
+    .page-header p {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .container { max-width: 880px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+      margin-bottom: 3.5rem;
+    }
+    .hero-img-wrap img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+    .article-body {
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      margin-bottom: 3.5rem;
+      backdrop-filter: blur(8px);
+    }
+    .article-body h2 {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--gold-light);
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding-bottom: 0.5rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; font-size: 1.12rem; color: #e2e8f0; }
+
+    blockquote.scripture {
+      margin: 2.2rem 0;
+      padding: 1.6rem 2rem;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(15, 28, 48, 0.6));
+      border-left: 4px solid var(--gold-primary);
+      border-right: 1px solid rgba(212, 175, 55, 0.2);
+      font-style: italic;
+      font-family: "Times New Roman", Times, serif;
+      color: #fff9db;
+      font-size: 1.15rem;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    blockquote.scripture cite {
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .blog-section { margin-top: 2rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    details.blog-card {
+      background: var(--card-bg);
+      padding: 1.75rem 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    details.blog-card[open] { border-color: var(--gold-light); box-shadow: 0 0 25px var(--gold-glow); }
+    details summary { outline: none; list-style: none; display: flex; flex-direction: column; }
+    details summary::-webkit-details-marker { display: none; }
+    .meta { font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1.5px; }
+    .card-title {
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title::after { content: '+'; font-size: 1.5rem; color: var(--gold-primary); }
+    details[open] .card-title::after { content: '−'; }
+    .article-full-content {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      cursor: auto;
+    }
+    .article-full-content p { margin-bottom: 1rem; }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(135deg, var(--gold-primary), #8f7420);
+      color: #030712;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px var(--gold-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #030712;
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2.4rem; }
+      .hero-img-wrap img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="./index.html" class="nav-brand">Zoe Foundations</a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./index.html#focus">Focus Areas</a></li>
+      <li><a href="./index.html#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Divine Health & Vitality</h1>
+    <p>The Incorruptible Stream of Wholeness</p>
+  </header>
+
+  <main class="container">
+    <div class="hero-img-wrap">
+      <img src="https://images.stockcake.com/public/6/8/d/68dccefa-e760-4e0a-9f24-4e88d08ae9c4_large/magical-healing-tree-stockcake.jpg" alt="Luminous Healing Tree of Life with Golden Energy">
+    </div>
+
+    <article class="article-body">
+      <h2>The Law of the Spirit of Life</h2>
+      <p>
+        Divine healing is not an occasional emergency visit from God—it is the perpetual, invigorating flow of <em>Zoe</em> operating throughout every cell, organ, and nerve. In Zion, sickness has no lawful right of habitation.
+      </p>
+
+      <blockquote class="scripture">
+        "Surely He has borne our griefs and carried our sorrows; yet we esteemed Him stricken, smitten by God, and afflicted. But He was wounded for our transgressions, He was bruised for our iniquities; the chastisement for our peace was upon Him, and by His stripes we are healed."
+        <cite>— Isaiah 53:4–5</cite>
+      </blockquote>
+
+      <p>
+        The Word of God is active biological medicine, rejuvenating our spirit, soul, and mortal bodies.
+      </p>
+
+      <blockquote class="scripture">
+        "My son, give attention to my words; incline your ear to my sayings. Do not let them depart from your eyes; keep them in the midst of your heart; for they are life to those who find them, and health to all their flesh."
+        <cite>— Proverbs 4:20–22</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers."
+        <cite>— 3 John 1:2</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "Bless the Lord, O my soul, and forget not all His benefits: who forgives all your iniquities, who heals all your diseases, who redeems your life from destruction, who crowns you with lovingkindness and tender mercies."
+        <cite>— Psalm 103:2–4</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "But if the Spirit of Him who raised Jesus from the dead dwells in you, He who raised Christ from the dead will also give life to your mortal bodies through His Spirit who dwells in you."
+        <cite>— Romans 8:11</cite>
+      </blockquote>
+    </article>
+
+    <section class="blog-section">
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--gold-light); margin-bottom: 0.5rem; font-size: 2rem;">Articles & Deep Teachings</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Click any teaching below to open the complete theological study.</p>
+      
+      <div class="blog-grid">
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Cellular Renewal • Living Faith</span>
+            <span class="card-title">1. The Word as Supernatural Medicine</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              When scripture speaks of God's Word being medicine (<em>marpe</em>) to all our flesh, it points to the divine frequency that counteracts cellular decay and stress-induced illness.
+            </p>
+          </div>
+        </details>
+
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Mind-Body Harmony • Soul Rest</span>
+            <span class="card-title">2. Wholeness from the Inside Out</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              Releasing bitterness, casting anxieties onto the Father, and allowing the peace of Christ to govern the heart directly relieves chronic bodily inflammation and restores radiant strength.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="./index.html#focus" class="back-btn">← Back to Focus Areas</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Zoe Foundations. All rights reserved. • Zion on Earth
+  </footer>
+
+</body>
+</html>
