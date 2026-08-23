@@ -3,200 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freedom from Addictions | Zoe Foundations</title>
+  <title>Deliverance, Healing & Liberty | Zoe Foundations</title>
   <style>
     :root {
-      --gold-primary: #d4af37;
+      --gold-deep: #b38728;
+      --gold-bright: #d4af37;
       --gold-light: #fef08a;
-      --gold-glow: rgba(212, 175, 55, 0.35);
-      --bg-heaven: #08111e;
-      --card-bg: rgba(15, 28, 48, 0.85);
-      --border-gold: rgba(212, 175, 55, 0.4);
-      --text-light: #e2e8f0;
-      --text-muted: #94a3b8;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --bg-light: #fdfbf7;
+      --card-bg: #ffffff;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --primary-navy: #0f2b48;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
       line-height: 1.85;
-      background: radial-gradient(circle at 50% 10%, #1f2747 0%, #08111e 65%, #030712 100%);
-      color: var(--text-light);
+      background: radial-gradient(circle at 50% 0%, #fffef0 0%, #fdfbf7 50%, #f7f3e8 100%);
+      color: var(--text-dark);
       min-height: 100vh;
     }
+
+    /* Navbar */
     nav.navbar {
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(8, 17, 30, 0.92);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       border-bottom: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
     }
     .nav-brand {
       font-family: "Times New Roman", Times, serif;
-      color: var(--gold-light);
-      font-size: 1.25rem;
+      color: var(--primary-navy);
+      font-size: 1.3rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-decoration: none;
       text-transform: uppercase;
-      text-shadow: 0 0 10px var(--gold-glow);
     }
-    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
-    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold-light); text-shadow: 0 0 8px var(--gold-glow); }
+    .nav-links { display: flex; list-style: none; gap: 1.75rem; }
+    .nav-links a {
+      color: var(--primary-navy);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-deep); }
 
+    /* Radiant Godly Header */
     .page-header {
-      padding: 5.5rem 1.5rem 4rem;
+      padding: 5.5rem 1.5rem 3.5rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(8, 17, 30, 0) 100%);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      background: linear-gradient(180deg, rgba(254, 240, 138, 0.25) 0%, rgba(253, 251, 247, 0) 100%);
+      border-bottom: 1px solid var(--border-gold);
     }
     .page-header h1 {
       font-family: "Times New Roman", Times, serif;
       font-size: 3.4rem;
       letter-spacing: 2px;
       margin-bottom: 0.75rem;
-      background: linear-gradient(90deg, #d4af37, #e2e8f0, #ffffff, #e2e8f0, #d4af37);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 5s linear infinite;
+      color: var(--primary-navy);
+      text-shadow: 0 2px 15px rgba(212, 175, 55, 0.3);
     }
-    @keyframes shine { to { background-position: 200% center; } }
     .page-header p {
       font-size: 1.25rem;
-      color: var(--gold-light);
+      color: var(--gold-deep);
       text-transform: uppercase;
       letter-spacing: 3px;
       font-family: "Times New Roman", Times, serif;
+      font-weight: 700;
     }
 
-    .container { max-width: 880px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .container { max-width: 920px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+
+    /* Luminous Hero Image */
     .hero-img-wrap {
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--border-gold);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+      border: 2px solid var(--border-gold);
+      box-shadow: 0 15px 40px rgba(179, 135, 40, 0.15);
       margin-bottom: 3.5rem;
     }
     .hero-img-wrap img { width: 100%; height: 380px; object-fit: cover; display: block; }
 
+    /* Immediate Crisis Support Box */
+    .crisis-card {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border: 1px solid #fcd34d;
+      padding: 1.75rem 2rem;
+      border-radius: 14px;
+      margin-bottom: 3rem;
+      border-left: 6px solid #d97706;
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.08);
+    }
+    .crisis-card h3 {
+      font-family: "Times New Roman", Times, serif;
+      color: #92400e;
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+    .crisis-card p { color: #78350f; font-size: 1.05rem; }
+
+    /* Core Article Body */
     .article-body {
       background: var(--card-bg);
       padding: 3rem 2.5rem;
-      border-radius: 14px;
+      border-radius: 16px;
       border: 1px solid var(--border-gold);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      margin-bottom: 3.5rem;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.08);
+      margin-bottom: 4rem;
     }
     .article-body h2 {
       font-family: "Times New Roman", Times, serif;
-      color: var(--gold-light);
+      color: var(--primary-navy);
       font-size: 2.2rem;
       margin-bottom: 1.25rem;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: 2px solid var(--gold-light);
       padding-bottom: 0.5rem;
     }
-    .article-body p { margin-bottom: 1.5rem; font-size: 1.12rem; color: #e2e8f0; }
+    .article-body p { margin-bottom: 1.5rem; font-size: 1.15rem; color: #334155; }
 
+    /* Golden Scripture Block */
     blockquote.scripture {
       margin: 2.2rem 0;
       padding: 1.6rem 2rem;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(15, 28, 48, 0.6));
-      border-left: 4px solid var(--gold-primary);
-      border-right: 1px solid rgba(212, 175, 55, 0.2);
+      background: linear-gradient(135deg, #fffef5, #fefce8);
+      border-left: 5px solid var(--gold-bright);
+      border-right: 1px solid var(--border-gold);
       font-style: italic;
       font-family: "Times New Roman", Times, serif;
-      color: #fff9db;
-      font-size: 1.15rem;
-      border-radius: 0 10px 10px 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      color: #1e293b;
+      font-size: 1.18rem;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.12);
     }
     blockquote.scripture cite {
       display: block;
       font-size: 0.95rem;
-      margin-top: 0.5rem;
-      color: var(--gold-light);
+      margin-top: 0.6rem;
+      color: var(--gold-deep);
       font-style: normal;
       font-weight: 700;
     }
 
-    .blog-section { margin-top: 2rem; }
-    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-    details.blog-card {
+    /* Breakthrough Categories Section */
+    .categories-section { margin-top: 3.5rem; }
+    .category-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+    
+    details.breakthrough-card {
       background: var(--card-bg);
-      padding: 1.75rem 2rem;
-      border-radius: 12px;
+      padding: 1.75rem 2.25rem;
+      border-radius: 14px;
       border: 1px solid var(--border-gold);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       cursor: pointer;
       transition: all 0.25s ease;
     }
-    details.blog-card[open] { border-color: var(--gold-light); box-shadow: 0 0 25px var(--gold-glow); }
-    details summary { outline: none; list-style: none; display: flex; flex-direction: column; }
+    details.breakthrough-card:hover {
+      border-color: var(--gold-bright);
+      box-shadow: 0 6px 24px var(--gold-glow);
+    }
+    details.breakthrough-card[open] {
+      border-color: var(--gold-deep);
+      box-shadow: 0 8px 30px rgba(179, 135, 40, 0.18);
+      background: #ffffff;
+    }
+    details summary {
+      outline: none;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
     details summary::-webkit-details-marker { display: none; }
-    .meta { font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1.5px; }
+    
+    .category-badge {
+      font-size: 0.8rem;
+      color: var(--gold-deep);
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
     .card-title {
       font-family: "Times New Roman", Times, serif;
-      color: #ffffff;
-      font-size: 1.4rem;
+      color: var(--primary-navy);
+      font-size: 1.45rem;
       font-weight: 700;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .card-title::after { content: '+'; font-size: 1.5rem; color: var(--gold-primary); }
-    details[open] .card-title::after { content: '−'; }
-    .article-full-content {
+    .card-title::after {
+      content: '+';
+      font-size: 1.8rem;
+      color: var(--gold-deep);
+      font-weight: 400;
+    }
+    details[open] .card-title::after {
+      content: '−';
+    }
+
+    /* Inner Expanded Content */
+    .inner-content {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
-      color: #cbd5e1;
-      font-size: 1.05rem;
+      border-top: 1px solid #f1f5f9;
+      color: #334155;
+      font-size: 1.08rem;
       cursor: auto;
     }
-    .article-full-content p { margin-bottom: 1rem; }
+    .inner-content p { margin-bottom: 1.25rem; }
+    .inner-scriptures {
+      background: #fafaf5;
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      border-left: 3px solid var(--gold-deep);
+      margin: 1.5rem 0;
+    }
+    .inner-scriptures p {
+      font-family: "Times New Roman", Times, serif;
+      font-style: italic;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    .inner-scriptures span {
+      font-weight: 700;
+      color: var(--gold-deep);
+      font-size: 0.9rem;
+      display: block;
+    }
 
     .back-btn {
       display: inline-block;
       margin-top: 2rem;
-      padding: 0.9rem 2.2rem;
-      background: linear-gradient(135deg, var(--gold-primary), #8f7420);
-      color: #030712;
+      padding: 0.95rem 2.4rem;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+      color: #ffffff;
       font-weight: 800;
       text-decoration: none;
       border-radius: 50px;
       font-family: "Times New Roman", Times, serif;
       letter-spacing: 2px;
       text-transform: uppercase;
-      box-shadow: 0 4px 20px var(--gold-glow);
+      box-shadow: 0 4px 20px rgba(179, 135, 40, 0.3);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6); }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(179, 135, 40, 0.45);
+    }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      background: #030712;
+      padding: 3.5rem 1rem;
+      background: var(--primary-navy);
       color: var(--gold-light);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border-gold);
-      margin-top: 4rem;
+      font-size: 0.95rem;
+      margin-top: 5rem;
     }
+
     @media (max-width: 768px) {
-      .page-header h1 { font-size: 2.4rem; }
-      .hero-img-wrap img { height: 260px; }
+      .page-header h1 { font-size: 2.3rem; }
+      .hero-img-wrap img { height: 240px; }
+      details.breakthrough-card { padding: 1.25rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <a href="./index.html" class="nav-brand">Zoe Foundations</a>
     <ul class="nav-links">
@@ -206,86 +291,258 @@
     </ul>
   </nav>
 
+  <!-- Heavenly Radiant Header -->
   <header class="page-header">
-    <h1>Freedom from Addictions</h1>
-    <p>Complete Deliverance, Inner Healing & Lasting Liberty</p>
+    <h1>Freedom, Healing & Deliverance</h1>
+    <p>Living in the Light of Divine Liberty</p>
   </header>
 
   <main class="container">
+
+    <!-- Hero Image of Divine Light -->
     <div class="hero-img-wrap">
-      <img src="https://images.stockcake.com/public/d/9/c/d9ce2f64-4922-4596-acd4-7c43102d9595_large/heaven-s-golden-light-stockcake.jpg" alt="Glorious Light Shattering Chains of Darkness">
+      <img src="https://images.stockcake.com/public/d/9/c/d9ce2f64-4922-4596-acd4-7c43102d9595_large/heaven-s-golden-light-stockcake.jpg" alt="Glorious Heavenly Golden Light Shattering Darkness">
     </div>
 
+    <!-- Immediate Compassion & Crisis Help -->
+    <div class="crisis-card">
+      <h3>You Are Deeply Valued & Never Alone</h3>
+      <p>
+        If you are in immediate crisis or experiencing suicidal thoughts, please know that your life carries infinite divine purpose. God has not abandoned you. Reach out right now to trusted spiritual leaders, loved ones, or contact emergency helplines in your area. Grace is reaching out to you this exact second.
+      </p>
+    </div>
+
+    <!-- Foundation Article -->
     <article class="article-body">
-      <h2>Liberty Through Resurrection Life</h2>
+      <h2>The Resurrection Power of Zoe</h2>
       <p>
-        Deliverance is not lifelong symptom-management; it is total liberation from the root spiritual bonds of fear, trauma, and compulsion through the power of Christ.
+        Addiction, compulsive cycles, and debilitating thoughts are not your identity—they are spiritual bondages and emotional wounds attempting to substitute for the peace of God. Jesus Christ did not come to manage symptoms; He came to shatter the yoke of bondage at the very root.
       </p>
-
-      <blockquote class="scripture">
-        "Therefore if the Son makes you free, you shall be free indeed."
-        <cite>— John 8:36</cite>
-      </blockquote>
-
-      <p>
-        The divine life within you is stronger than any generational pattern or chemical dependency.
-      </p>
-
-      <blockquote class="scripture">
-        "Stand fast therefore in the liberty by which Christ has made us free, and do not be entangled again with a yoke of bondage."
-        <cite>— Galatians 5:1</cite>
-      </blockquote>
-
-      <blockquote class="scripture">
-        "He has delivered us from the power of darkness and conveyed us into the kingdom of the Son of His love, in whom we have redemption through His blood, the forgiveness of sins."
-        <cite>— Colossians 1:13–14</cite>
-      </blockquote>
 
       <blockquote class="scripture">
         "The Spirit of the Lord God is upon Me, because the Lord has anointed Me to preach good tidings to the poor; He has sent Me to heal the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those who are bound."
         <cite>— Isaiah 61:1</cite>
       </blockquote>
 
+      <p>
+        True liberty is the realization that the old man was crucified with Christ. The uncreated life of God within your spirit is greater than any chemical dependency, emotional trauma, or generational pattern.
+      </p>
+
       <blockquote class="scripture">
-        "For the law of the Spirit of life in Christ Jesus has made me free from the law of sin and death."
-        <cite>— Romans 8:2</cite>
+        "Therefore if the Son makes you free, you shall be free indeed."
+        <cite>— John 8:36</cite>
       </blockquote>
     </article>
 
-    <section class="blog-section">
-      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--gold-light); margin-bottom: 0.5rem; font-size: 2rem;">Articles & Deep Teachings</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Click any teaching below to open the complete theological study.</p>
-      
-      <div class="blog-grid">
-        <details class="blog-card">
+    <!-- Specific Areas of Healing & Deliverance -->
+    <section class="categories-section">
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--primary-navy); font-size: 2.2rem; text-align: center; margin-bottom: 0.5rem;">
+        Specific Pathways to Freedom
+      </h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">
+        Click any category below to receive encouragement, divine perspective, and foundational scriptures.
+      </p>
+
+      <div class="category-grid">
+
+        <!-- 1. Suicidal Thoughts -->
+        <details class="breakthrough-card">
           <summary>
-            <span class="meta">Deliverance • Spiritual Warfare</span>
-            <span class="card-title">1. Uprooting the Hidden Stronghold</span>
+            <span class="category-badge">Life Over Darkness</span>
+            <span class="card-title">1. Overcoming Suicidal Thoughts & Deep Despair</span>
           </summary>
-          <div class="article-full-content">
+          <div class="inner-content">
             <p>
-              Compulsive habits are often false emotional refuges for unhealed grief or rejection. When the Father's unconditional love touches the heart, the spiritual appetite for darkness is permanently broken.
+              When the enemy whispers that life is no longer worth living, understand that he is attacking the immense divine destiny within you. Darkness is heavy only because the morning light is about to break through. You were created with purpose, and God is near to your broken heart.
             </p>
+            <div class="inner-scriptures">
+              <p>"I shall not die, but live, and declare the works of the Lord."</p>
+              <span>— Psalm 118:17</span>
+              <p style="margin-top: 0.75rem;">"For I know the thoughts that I think toward you, says the Lord, thoughts of peace and not of evil, to give you a future and a hope."</p>
+              <span>— Jeremiah 29:11</span>
+              <p style="margin-top: 0.75rem;">"The Lord is near to those who have a broken heart, and saves such as have a contrite spirit."</p>
+              <span>— Psalm 34:18</span>
+            </div>
           </div>
         </details>
 
-        <details class="blog-card">
+        <!-- 2. Drinking Addictions -->
+        <details class="breakthrough-card">
           <summary>
-            <span class="meta">Mind Renewal • Identity</span>
-            <span class="card-title">2. Standing in the New Creation Reality</span>
+            <span class="category-badge">Sober Spirit & Clear Mind</span>
+            <span class="card-title">2. Freedom from Alcohol & Drinking Dependency</span>
           </summary>
-          <div class="article-full-content">
+          <div class="inner-content">
             <p>
-              You do not overcome by fighting willpower battles in the flesh—you overcome by declaring who you already are in Christ until your subconscious desires align with the Spirit of Life.
+              Alcohol often serves as a false refuge for stress, numbness, or social anxiety. The Holy Spirit provides real peace, spiritual sobriety, and joy that leaves no guilt or regret. You are liberated from the need for external numbing.
             </p>
+            <div class="inner-scriptures">
+              <p>"And do not be drunk with wine, in which is dissipation; but be filled with the Spirit."</p>
+              <span>— Ephesians 5:18</span>
+              <p style="margin-top: 0.75rem;">"For God has not given us a spirit of fear, but of power and of love and of a sound mind."</p>
+              <span>— 2 Timothy 1:7</span>
+            </div>
           </div>
         </details>
+
+        <!-- 3. Smoking & Substance Habits -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Clean Temple & Vitality</span>
+            <span class="card-title">3. Smoking & Substance Addiction</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Your body is a consecrated temple of the Holy Spirit, designed for supernatural vitality and clean air. As your identity is restored, the cravings of nicotine and chemical dependencies lose their grip.
+            </p>
+            <div class="inner-scriptures">
+              <p>"Or do you not know that your body is the temple of the Holy Spirit who is in you, whom you have from God, and you are not your own? For you were bought at a price; therefore glorify God in your body and in your spirit, which are God’s."</p>
+              <span>— 1 Corinthians 6:19–20</span>
+              <p style="margin-top: 0.75rem;">"I can do all things through Christ who strengthens me."</p>
+              <span>— Philippians 4:13</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 4. Pornography -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Pure Eyes & Clean Conscience</span>
+            <span class="card-title">4. Freedom from Pornography & Sexual Compulsions</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Pornography isolates the soul into fantasy and shame, cheapening God's holy design for intimacy. In Christ, shame is wiped away. God imparts supernatural purity, restoring honor to your thoughts and clarity to your mind.
+            </p>
+            <div class="inner-scriptures">
+              <p>"Blessed are the pure in heart, for they shall see God."</p>
+              <span>— Matthew 5:8</span>
+              <p style="margin-top: 0.75rem;">"Create in me a clean heart, O God, and renew a steadfast spirit within me."</p>
+              <span>— Psalm 51:10</span>
+              <p style="margin-top: 0.75rem;">"Flee sexual immorality. Every sin that a man does is outside the body, but he who commits sexual immorality sins against his own body."</p>
+              <span>— 1 Corinthians 6:18</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 5. Prostitution & Exploitation -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Restoration & Royal Honor</span>
+            <span class="card-title">5. Deliverance from Prostitution & Sexual Exploitation</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Regardless of what forced you or drew you into commercial exploitation, your royal dignity in Christ remains unpolluted. God washes away all contamination, breaks spiritual ties, and crowns you with honor, protection, and provision.
+            </p>
+            <div class="inner-scriptures">
+              <p>"'Neither do I condemn you; go and sin no more.'"</p>
+              <span>— John 8:11</span>
+              <p style="margin-top: 0.75rem;">"Instead of your shame you shall have double honor, and instead of confusion they shall rejoice in their portion. Therefore in their land they shall possess double; everlasting joy shall be theirs."</p>
+              <span>— Isaiah 61:7</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 6. Adultery & Infidelity -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Covenant Healing & Faithfulness</span>
+            <span class="card-title">6. Overcoming Adultery & Covenant Breaking</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Adultery breaches trust and invites spiritual turbulence into the home. When genuine repentance takes place, God forgives, cleanses the soul, and can supernaturally restore broken covenants, peace, and fidelity.
+            </p>
+            <div class="inner-scriptures">
+              <p>"Marriage is honorable among all, and the bed undefiled..."</p>
+              <span>— Hebrews 13:4</span>
+              <p style="margin-top: 0.75rem;">"If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."</p>
+              <span>— 1 John 1:9</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 7. Gambling & Financial Risk -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Kingdom Provision Over Chance</span>
+            <span class="card-title">7. Breaking Gambling & Financial Risk Bondage</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Gambling is fueled by the illusion of quick riches and a spirit of greed or desperation. God’s Kingdom operates on steady stewardship, diligent work, and divine blessing—free from the panic of chance and debt.
+            </p>
+            <div class="inner-scriptures">
+              <p>"Wealth gained by dishonesty will be diminished, but he who gathers by labor will increase."</p>
+              <span>— Proverbs 13:11</span>
+              <p style="margin-top: 0.75rem;">"Let your conduct be without covetousness; be content with such things as you have. For He Himself has said, 'I will never leave you nor forsake you.'"</p>
+              <span>— Hebrews 13:5</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 8. Addicted to Eating -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Temperance & Self-Control</span>
+            <span class="card-title">8. Food Addiction & Binge/Emotional Eating</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Using food to soothe grief, loneliness, or anxiety leads to guilt and physical sluggishness. Food is for nourishment, while God alone satisfies the hunger of the soul. The fruit of the Spirit provides self-control and dietary balance.
+            </p>
+            <div class="inner-scriptures">
+              <p>"All things are lawful for me, but all things are not helpful. All things are lawful for me, but I will not be brought under the power of any."</p>
+              <span>— 1 Corinthians 6:12</span>
+              <p style="margin-top: 0.75rem;">"For the fruit of the Spirit is love, joy, peace, longsuffering, kindness, goodness, faithfulness, gentleness, self-control."</p>
+              <span>— Galatians 5:22–23</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 9. Anger & Bitterness -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Peace & Reconciliation</span>
+            <span class="card-title">9. Anger, Rage & Generational Bitterness</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Explosive anger and brooding resentment poison physical health and relationships. Surrendering the right to retaliate into God’s hands releases miraculous peace and mental calm.
+            </p>
+            <div class="inner-scriptures">
+              <p>"Let all bitterness, wrath, anger, clamor, and evil speaking be put away from you, with all malice. And be kind to one another, tenderhearted, forgiving one another, even as God in Christ forgave you."</p>
+              <span>— Ephesians 4:31–32</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 10. Digital Addiction -->
+        <details class="breakthrough-card">
+          <summary>
+            <span class="category-badge">Presence & Focus</span>
+            <span class="card-title">10. Digital Addiction & Social Media Isolation</span>
+          </summary>
+          <div class="inner-content">
+            <p>
+              Compulsive scrolling and screen dependency fragment our attention and steal sacred quiet time with God. Reclaiming your focus allows divine purpose and authentic relationships to flourish.
+            </p>
+            <div class="inner-scriptures">
+              <p>"See then that you walk circumspectly, not as fools but as wise, redeeming the time, because the days are evil."</p>
+              <span>— Ephesians 5:15–16</span>
+            </div>
+          </div>
+        </details>
+
       </div>
     </section>
 
-    <div style="text-align: center; margin-top: 4rem;">
-      <a href="./index.html#focus" class="back-btn">← Back to Focus Areas</a>
+    <!-- Return Button -->
+    <div style="text-align: center; margin-top: 4.5rem;">
+      <a href="./index.html#focus" class="back-btn">← Back to All Focus Areas</a>
     </div>
+
   </main>
 
   <footer>
