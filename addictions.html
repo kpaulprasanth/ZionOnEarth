@@ -1,1 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freedom from Addictions | Zoe Foundations</title>
+  <style>
+    :root {
+      --gold-primary: #d4af37;
+      --gold-light: #fef08a;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --bg-heaven: #08111e;
+      --card-bg: rgba(15, 28, 48, 0.85);
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+      line-height: 1.85;
+      background: radial-gradient(circle at 50% 10%, #1f2747 0%, #08111e 65%, #030712 100%);
+      color: var(--text-light);
+      min-height: 100vh;
+    }
+    nav.navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(8, 17, 30, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-brand {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px var(--gold-glow);
+    }
+    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); text-shadow: 0 0 8px var(--gold-glow); }
 
+    .page-header {
+      padding: 5.5rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(8, 17, 30, 0) 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .page-header h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 3.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(90deg, #d4af37, #e2e8f0, #ffffff, #e2e8f0, #d4af37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+    }
+    @keyframes shine { to { background-position: 200% center; } }
+    .page-header p {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .container { max-width: 880px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+      margin-bottom: 3.5rem;
+    }
+    .hero-img-wrap img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+    .article-body {
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      margin-bottom: 3.5rem;
+      backdrop-filter: blur(8px);
+    }
+    .article-body h2 {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--gold-light);
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding-bottom: 0.5rem;
+    }
+    .article-body p { margin-bottom: 1.5rem; font-size: 1.12rem; color: #e2e8f0; }
+
+    blockquote.scripture {
+      margin: 2.2rem 0;
+      padding: 1.6rem 2rem;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(15, 28, 48, 0.6));
+      border-left: 4px solid var(--gold-primary);
+      border-right: 1px solid rgba(212, 175, 55, 0.2);
+      font-style: italic;
+      font-family: "Times New Roman", Times, serif;
+      color: #fff9db;
+      font-size: 1.15rem;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    blockquote.scripture cite {
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .blog-section { margin-top: 2rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    details.blog-card {
+      background: var(--card-bg);
+      padding: 1.75rem 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    details.blog-card[open] { border-color: var(--gold-light); box-shadow: 0 0 25px var(--gold-glow); }
+    details summary { outline: none; list-style: none; display: flex; flex-direction: column; }
+    details summary::-webkit-details-marker { display: none; }
+    .meta { font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1.5px; }
+    .card-title {
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title::after { content: '+'; font-size: 1.5rem; color: var(--gold-primary); }
+    details[open] .card-title::after { content: '−'; }
+    .article-full-content {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      cursor: auto;
+    }
+    .article-full-content p { margin-bottom: 1rem; }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(135deg, var(--gold-primary), #8f7420);
+      color: #030712;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px var(--gold-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6); }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #030712;
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2.4rem; }
+      .hero-img-wrap img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="./index.html" class="nav-brand">Zoe Foundations</a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./index.html#focus">Focus Areas</a></li>
+      <li><a href="./index.html#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Freedom from Addictions</h1>
+    <p>Complete Deliverance, Inner Healing & Lasting Liberty</p>
+  </header>
+
+  <main class="container">
+    <div class="hero-img-wrap">
+      <img src="https://images.stockcake.com/public/d/9/c/d9ce2f64-4922-4596-acd4-7c43102d9595_large/heaven-s-golden-light-stockcake.jpg" alt="Glorious Light Shattering Chains of Darkness">
+    </div>
+
+    <article class="article-body">
+      <h2>Liberty Through Resurrection Life</h2>
+      <p>
+        Deliverance is not lifelong symptom-management; it is total liberation from the root spiritual bonds of fear, trauma, and compulsion through the power of Christ.
+      </p>
+
+      <blockquote class="scripture">
+        "Therefore if the Son makes you free, you shall be free indeed."
+        <cite>— John 8:36</cite>
+      </blockquote>
+
+      <p>
+        The divine life within you is stronger than any generational pattern or chemical dependency.
+      </p>
+
+      <blockquote class="scripture">
+        "Stand fast therefore in the liberty by which Christ has made us free, and do not be entangled again with a yoke of bondage."
+        <cite>— Galatians 5:1</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "He has delivered us from the power of darkness and conveyed us into the kingdom of the Son of His love, in whom we have redemption through His blood, the forgiveness of sins."
+        <cite>— Colossians 1:13–14</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "The Spirit of the Lord God is upon Me, because the Lord has anointed Me to preach good tidings to the poor; He has sent Me to heal the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those who are bound."
+        <cite>— Isaiah 61:1</cite>
+      </blockquote>
+
+      <blockquote class="scripture">
+        "For the law of the Spirit of life in Christ Jesus has made me free from the law of sin and death."
+        <cite>— Romans 8:2</cite>
+      </blockquote>
+    </article>
+
+    <section class="blog-section">
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--gold-light); margin-bottom: 0.5rem; font-size: 2rem;">Articles & Deep Teachings</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Click any teaching below to open the complete theological study.</p>
+      
+      <div class="blog-grid">
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Deliverance • Spiritual Warfare</span>
+            <span class="card-title">1. Uprooting the Hidden Stronghold</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              Compulsive habits are often false emotional refuges for unhealed grief or rejection. When the Father's unconditional love touches the heart, the spiritual appetite for darkness is permanently broken.
+            </p>
+          </div>
+        </details>
+
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Mind Renewal • Identity</span>
+            <span class="card-title">2. Standing in the New Creation Reality</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              You do not overcome by fighting willpower battles in the flesh—you overcome by declaring who you already are in Christ until your subconscious desires align with the Spirit of Life.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="./index.html#focus" class="back-btn">← Back to Focus Areas</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Zoe Foundations. All rights reserved. • Zion on Earth
+  </footer>
+
+</body>
+</html>
