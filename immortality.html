@@ -6,144 +6,233 @@
   <title>Immortality & Eternal Life | Zoe Foundations</title>
   <style>
     :root {
-      --primary: #1e3a5f;
-      --accent: #90ee90;
-      --bg: #faf9f6;
-      --text: #2d3748;
-      --card-bg: #ffffff;
-      --border-color: #e2e8f0;
+      --gold-primary: #d4af37;
+      --gold-light: #fef08a;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --bg-heaven: #08111e;
+      --card-bg: rgba(15, 28, 48, 0.85);
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
-      line-height: 1.8;
-      background-color: var(--bg);
-      color: var(--text);
+      line-height: 1.85;
+      background: radial-gradient(circle at 50% 10%, #172a45 0%, #08111e 65%, #030712 100%);
+      color: var(--text-light);
+      min-height: 100vh;
     }
+
+    /* Navbar */
     nav.navbar {
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(15, 32, 39, 0.95);
-      backdrop-filter: blur(8px);
+      background: rgba(8, 17, 30, 0.92);
+      backdrop-filter: blur(10px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid var(--border-gold);
     }
     .nav-brand {
       font-family: "Times New Roman", Times, serif;
-      color: #ffffff;
+      color: var(--gold-light);
       font-size: 1.25rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-decoration: none;
       text-transform: uppercase;
+      text-shadow: 0 0 10px var(--gold-glow);
     }
     .nav-links { display: flex; list-style: none; gap: 1.5rem; }
-    .nav-links a { color: #e2e8f0; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); text-shadow: 0 0 8px var(--gold-glow); }
 
+    /* Heavenly Header */
     .page-header {
-      background: linear-gradient(135deg, #0f2027, var(--primary));
-      color: #ffffff;
-      padding: 4.5rem 1.5rem 3.5rem;
+      position: relative;
+      padding: 5.5rem 1.5rem 4rem;
       text-align: center;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(8, 17, 30, 0) 100%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
     .page-header h1 {
       font-family: "Times New Roman", Times, serif;
-      font-size: 3rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.75rem;
-      color: #ffffff;
-    }
-    .page-header p {
-      font-size: 1.2rem;
-      color: var(--accent);
-      text-transform: uppercase;
+      font-size: 3.4rem;
       letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(90deg, #d4af37, #fff6a9, #ffffff, #fff6a9, #d4af37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+    }
+    @keyframes shine { to { background-position: 200% center; } }
+    .page-header p {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
       font-family: "Times New Roman", Times, serif;
     }
 
-    .container { max-width: 850px; margin: 0 auto; padding: 4rem 1.5rem; }
-    
+    .container { max-width: 880px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+
+    /* Celestial Hero Image */
+    .hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+      margin-bottom: 3.5rem;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Article Body */
     .article-body {
       background: var(--card-bg);
       padding: 3rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      margin-bottom: 3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      margin-bottom: 3.5rem;
+      backdrop-filter: blur(8px);
     }
     .article-body h2 {
       font-family: "Times New Roman", Times, serif;
-      color: var(--primary);
-      font-size: 2rem;
+      color: var(--gold-light);
+      font-size: 2.2rem;
       margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding-bottom: 0.5rem;
     }
-    .article-body p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #374151; }
-    
-    blockquote {
+    .article-body p { margin-bottom: 1.5rem; font-size: 1.12rem; color: #e2e8f0; }
+
+    /* Heavenly Gold Scripture Block */
+    blockquote.scripture {
       margin: 2.5rem 0;
-      padding: 1.5rem 2rem;
-      background: #f4faf4;
-      border-left: 5px solid #77dd77;
+      padding: 1.75rem 2.25rem;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(15, 28, 48, 0.6));
+      border-left: 4px solid var(--gold-primary);
+      border-right: 1px solid rgba(212, 175, 55, 0.2);
       font-style: italic;
       font-family: "Times New Roman", Times, serif;
-      color: #2e4a32;
-      font-size: 1.15rem;
-      border-radius: 0 8px 8px 0;
+      color: #fff9db;
+      font-size: 1.2rem;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    blockquote.scripture cite {
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 700;
     }
 
-    .blog-section { margin-top: 4rem; }
+    /* Expandable Study Cards */
+    .blog-section { margin-top: 2rem; }
     .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-    .blog-card {
+    details.blog-card {
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 10px;
-      border-left: 4px solid var(--primary);
-      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-      transition: transform 0.2s ease;
+      padding: 1.75rem 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
-    .blog-card:hover { transform: translateY(-2px); }
-    .blog-card h3 {
+    details.blog-card[open] {
+      border-color: var(--gold-light);
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+    details summary {
+      outline: none;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    .meta { font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1.5px; }
+    .card-title {
       font-family: "Times New Roman", Times, serif;
-      color: var(--primary);
-      font-size: 1.35rem;
-      margin-bottom: 0.5rem;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .blog-card .meta { font-size: 0.85rem; color: #64748b; margin-bottom: 0.75rem; }
+    .card-title::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold-primary);
+    }
+    details[open] .card-title::after { content: '−'; }
+    .article-full-content {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      cursor: auto;
+    }
+    .article-full-content p { margin-bottom: 1rem; }
 
+    /* Button */
     .back-btn {
       display: inline-block;
       margin-top: 2rem;
-      padding: 0.8rem 1.8rem;
-      background: var(--primary);
-      color: #ffffff;
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(135deg, var(--gold-primary), #8f7420);
+      color: #030712;
+      font-weight: 800;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
+      border-radius: 50px;
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px var(--gold-glow);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .back-btn:hover { opacity: 0.9; }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+    }
 
     footer {
       text-align: center;
-      padding: 2.5rem 1rem;
-      background: #0f2027;
-      color: #9fb3c8;
+      padding: 3rem 1rem;
+      background: #030712;
+      color: var(--gold-light);
       font-size: 0.9rem;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2.4rem; }
+      .hero-img-wrap img { height: 260px; }
     }
   </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="nav-brand">Zoe Foundations</a>
+    <a href="./index.html" class="nav-brand">Zoe Foundations</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#focus">Focus Areas</a></li>
-      <li><a href="index.html#connect">Connect</a></li>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./index.html#focus">Focus Areas</a></li>
+      <li><a href="./index.html#connect">Connect</a></li>
     </ul>
   </nav>
 
@@ -153,42 +242,73 @@
   </header>
 
   <main class="container">
+    
+    <!-- Hero Celestial Image -->
+    <div class="hero-img-wrap">
+      <img src="https://images.stockcake.com/public/d/9/c/d9ce2f64-4922-4596-acd4-7c43102d9595_large/heaven-s-golden-light-stockcake.jpg" alt="Heavenly Realm Golden Light and Celestial Clouds">
+    </div>
+
     <article class="article-body">
-      <h2>The Eternal Blueprint of Zoe</h2>
+      <h2>The Incorruptible Blueprint</h2>
       <p>
-        In biblical theology, immortality is not merely endless existence—it is the direct impartation of God's uncreated, incorruptible life (<em>Zoe</em>) swallowing up mortality. Christ has abolished death and brought life and immortality to light through the Gospel.
-      </p>
-      <p>
-        When believers awaken to their union with Christ, they walk no longer under the dominion of corruption, decay, and fear, but under the law of the Spirit of Life in Christ Jesus.
+        In biblical revelation, immortality is not simply endless duration—it is the direct impartation of God’s uncreated, eternal substance (<em>Zoe</em>) swallowing up mortality and corruption. Christ did not merely teach immortality; He abolished death and radiated incorruptibility into human reality.
       </p>
 
-      <blockquote>
-        "Our Savior Jesus Christ, who has destroyed death and has brought life and immortality to light through the gospel." — 2 Timothy 1:10
+      <blockquote class="scripture">
+        "Our Savior Jesus Christ, who has abolished death and brought life and immortality to light through the gospel."
+        <cite>— 2 Timothy 1:10</cite>
       </blockquote>
 
       <p>
-        As Zion is established on Earth, we contend for the full manifestation of this reality: spiritual vitality, divine endurance, and unbroken fellowship with the Father.
+        To walk in the reality of Zion is to realize that corruption, spiritual decay, and despair have no legal claim over those regenerated by the Holy Spirit. The divine nature has been woven into our inner man.
       </p>
+
+      <blockquote class="scripture">
+        "For this corruptible must put on incorruption, and this mortal must put on immortality. So when this corruptible has put on incorruption, and this mortal has put on immortality, then shall be brought to pass the saying that is written: 'Death is swallowed up in victory.'"
+        <cite>— 1 Corinthians 15:53–54</cite>
+      </blockquote>
     </article>
 
+    <!-- Deep Dive Teachings -->
     <section class="blog-section">
-      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--primary);">Articles & Teachings on Immortality</h2>
+      <h2 style="font-family: 'Times New Roman', Times, serif; color: var(--gold-light); margin-bottom: 0.5rem; font-size: 2rem;">Articles & Deep Teachings</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Click any teaching below to open the complete theological study.</p>
+      
       <div class="blog-grid">
-        <div class="blog-card">
-          <div class="meta">Teaching • Zoe Life Series</div>
-          <h3>1. Swallowing Up Mortality in Victory</h3>
-          <p>An in-depth study of 1 Corinthians 15 and how the incorruptible seed operates within the spirit of the believer today.</p>
-        </div>
-        <div class="blog-card">
-          <div class="meta">Revelation • Kingdom Studies</div>
-          <h3>2. The Tree of Life vs. The Tree of Knowledge</h3>
-          <p>Moving past religion and understanding how feasting on the Divine Life produces spiritual perpetuity and dominion.</p>
-        </div>
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Divine Substance • Life Series</span>
+            <span class="card-title">1. Swallowing Up Mortality in Victory</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              Paul writes in 2 Corinthians 5:4 that we groan not to be unclothed, but clothed upon, that mortality might be swallowed up by life.
+            </p>
+            <p>
+              The incorruptible seed is active within your spirit today. As you meditate on the living Word, the frequency of divine life renews your thoughts, eliminates subconscious terror of decay, and floods your spirit with celestial stamina.
+            </p>
+          </div>
+        </details>
+
+        <details class="blog-card">
+          <summary>
+            <span class="meta">Genesis to Revelation • The Blueprint</span>
+            <span class="card-title">2. Feasting on the Tree of Life</span>
+          </summary>
+          <div class="article-full-content">
+            <p>
+              In Eden, humanity was offered two trees: Knowledge (which birthed self-effort and death) and Life (which birthed perpetual communion and glory).
+            </p>
+            <p>
+              Christ is our Tree of Life. In Revelation 22:2, the leaves of this Tree are for the healing of the nations. As we feed continuously on Christ, we transcend religious striving and abide in indestructible fellowship with the Father.
+            </p>
+          </div>
+        </details>
       </div>
     </section>
 
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="index.html#focus" class="back-btn">← Back to All Focus Areas</a>
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="./index.html#focus" class="back-btn">← Back to Focus Areas</a>
     </div>
   </main>
 
